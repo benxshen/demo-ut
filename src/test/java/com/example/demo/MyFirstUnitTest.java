@@ -46,6 +46,8 @@ public class MyFirstUnitTest {
 
 	@Test
 	public void testHashMap_computeIfPresent() throws Exception {
+		assertEquals(2, tested.size());
+
 		assertEquals("JUNIT", tested.computeIfPresent("test", (key, value) -> {
 			return value.toUpperCase();
 		}));

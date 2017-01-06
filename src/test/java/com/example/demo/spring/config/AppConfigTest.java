@@ -2,7 +2,6 @@ package com.example.demo.spring.config;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import java.util.Map;
@@ -24,9 +23,13 @@ public class AppConfigTest {
 		Map<String, String> appParams = appConfig.appParams();
 
 		assertNotNull(appParams);
-		assertTrue(appParams.containsKey("greeting"));
+		// assertTrue(appParams.containsKey("greeting"));
 		assertEquals("hello", appParams.get("greeting"));
+	}
 
+	@Test
+	public void testAppParams_modify() {
+		Map<String, String> appParams = appConfig.appParams();
 		UnsupportedOperationException exp = null;
 		try {
 			appParams.put("foo", "bar");
@@ -36,6 +39,14 @@ public class AppConfigTest {
 		}
 		assertNotNull("UnsupportedOperationException should be thrown when modifying the appParams", exp);
 
+	}
+
+	@Test(expected=UnsupportedOperationException.class)
+	public void testAppParams_modify2() {
+		Map<String, String> appParams = appConfig.appParams();
+		appParams.put("foo", "bar");
+
+		fail("never happened");
 	}
 
 }

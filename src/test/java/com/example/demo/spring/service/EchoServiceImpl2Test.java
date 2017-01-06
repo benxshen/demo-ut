@@ -1,6 +1,6 @@
 package com.example.demo.spring.service;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -51,7 +51,10 @@ public class EchoServiceImpl2Test {
 
 	@Test
 	public void testModifyAppParams() throws Exception {
+		assertTrue(appParams == appParamsForTest);
+
 		assertEquals("shen", appParams.get("benx"));
+
 		appParams.put("foo", "bar");
 		assertEquals("bar", appParamsForTest.get("foo"));
 	}
