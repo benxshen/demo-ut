@@ -8,9 +8,9 @@
 	<properties>
 		<spring-version>4.3.4.RELEASE</spring-version>
 		<junit-version>4.12</junit-version>
-		<lombok-version>1.16.12</lombok-version>
-		<mockito-version>2.0.42-beta</mockito-version> <!-- for powermock compatibility, here can be 2.0.42-beta only -->
-		<powermock-version>1.6.6</powermock-version>
+		<lombok-version>1.18.4</lombok-version>
+		<mockito-version>2.23.4</mockito-version>
+        <powermock-version>2.0.0</powermock-version>
 	</properties>
 
 	<dependencies>

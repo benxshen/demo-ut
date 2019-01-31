@@ -240,7 +240,7 @@ public class HelloMockitoTest {
         List mockedList = mock(List.class);
 
         when(mockedList.add(anyString())).thenAnswer(callOnMock -> {
-            String str = callOnMock.getArgumentAt(0, String.class);
+            String str = callOnMock.getArgument(0);
             return str.startsWith("foo");
         });
 
